@@ -17,6 +17,7 @@ public class PlayerCon : MonoBehaviour
     public Transform feetPos;
     public float checkRadius;
     public LayerMask whatIsGround;
+    public int Health = 5;
 
 
     private void Start()
@@ -59,8 +60,13 @@ public class PlayerCon : MonoBehaviour
         facingRight = !facingRight;
         transform.Rotate(0f, 180f, 0f);
     }
-    void Bullet(){
-        
-
+    public void TakeDamage(int damage){
+       Health -= damage;
+       if(Health <= 0){
+           Die();
+       }
+    }    
+    void Die(){
+        Destroy(gameObject);
     }
 }

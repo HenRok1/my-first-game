@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class weapon : MonoBehaviour
 {
-   public Transform firePoint; 
-   public GameObject bullet;
+    public Transform firePoint; 
+    public GameObject bullet;
+   
     void Update()
     {
         if(Input.GetButtonDown("Fire1")){
